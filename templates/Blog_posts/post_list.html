@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD operations</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Contact</td>
+        <td>
+            <a href="{% url 'createUser' %}" class ="btn" >Add New</a>
+
+        </td>
+    </tr>
+    </thead>
+
+    <tbody>
+        {% for user in user_list %}
+        <tr>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.contact}}</td>
+            <td><a href="{% url 'update_User' user.id %}">Edit</a>
+
+                <a href="{% url 'deleteUser' user.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

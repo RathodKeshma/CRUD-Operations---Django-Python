@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Operations</title>
+</head>
+<body>
+<h1>FORM</h1>
+<div class="container">
+      <form action="" method="post" autocomplete="off">
+          {% csrf_token %}
+          {{form|crispy}}
+        <input class="btn btn-primary" type="submit" value="Submit" />
+      </form>
+    </div>
+</body>
+</html>
